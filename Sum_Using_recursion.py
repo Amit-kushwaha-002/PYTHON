@@ -1,3 +1,10 @@
+# def sum(n):
+#     if(n==1):
+#         return 1
+#     return sum(n-1)+n
+# n=int(input("Enter any natural number :"))
+# print(sum(n))    
+
 def sum(n):
     if(n==1):
         return 1
