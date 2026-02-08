@@ -4,3 +4,5 @@ print(type(a))
 print(len(a))
 
 a.reverse()
+print(a)
+
