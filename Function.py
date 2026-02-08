@@ -1,9 +1,13 @@
-# def pc():
-#     print("Helllo World : ")
+def pc():
+    print("Helllo World : ")
 
-# pc()    
+pc()    
 
 def hai(name):
     print("Good morning "+name)
 
+
 hai("AMIT")    
+
+def github():
+    return "hello Github Here :
