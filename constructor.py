@@ -1,6 +1,7 @@
 class Employee:
     language = "python"
     salary = 200000
+    name = "Amit"
 
     def __init__(self, name, language, salary):
         print("Hi, I am under the constructor")
