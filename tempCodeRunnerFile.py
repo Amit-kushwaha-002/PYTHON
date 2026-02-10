@@ -1,1 +1,2 @@
- # print(number*i)
+
+        self.language = language
