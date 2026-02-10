@@ -24,3 +24,4 @@ print(amit.language, amit.salary, amit.name)
 # Method calls
 amit.data()
 amit.learn()
+
