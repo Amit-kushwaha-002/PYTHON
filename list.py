@@ -10,5 +10,6 @@ fruits.append(f1)
 
 print(fruits)
 
-new = fruits.pop()
-print(fruits)
+# new = fruits.pop()
+# print(fruits)
+
