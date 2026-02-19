@@ -7,4 +7,8 @@
 fruits = []
 f1 = input("Enter fruits name :")
 fruits.append(f1)    
+
+print(fruits)
+
+new = fruits.pop()
 print(fruits)
