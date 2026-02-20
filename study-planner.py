@@ -6,7 +6,7 @@ from datetime import datetime
 
 DATA_FILE = "study_data.json"
 
-
+print("STUDY PLAN")
 # -------------------------
 # DATA HANDLING
 # -------------------------
@@ -73,78 +73,78 @@ def generate_plan(data):
         print(f"  Suggested Study: {daily_hours} hrs/day\n")
 
 
-# # -------------------------
-# # MARK STUDY PROGRESS
-# # -------------------------
+# -------------------------
+# MARK STUDY PROGRESS
+# -------------------------
 
-# def log_study(data):
-#     if not data["subjects"]:
-#         print("⚠ No subjects available.")
-#         return
+def log_study(data):
+    if not data["subjects"]:
+        print("⚠ No subjects available.")
+        return
 
-#     print("\nSelect Subject:")
-#     for i, subject in enumerate(data["subjects"]):
-#         print(f"{i+1}. {subject['name']}")
+    print("\nSelect Subject:")
+    for i, subject in enumerate(data["subjects"]):
+        print(f"{i+1}. {subject['name']}")
 
-#     choice = int(input("Choice: ")) - 1
-#     hours = float(input("Hours Studied Today: "))
+    choice = int(input("Choice: ")) - 1
+    hours = float(input("Hours Studied Today: "))
 
-#     data["subjects"][choice]["completed_hours"] += hours
-#     data["history"].append({
-#         "subject": data["subjects"][choice]["name"],
-#         "hours": hours,
-#         "date": str(datetime.today().date())
-#     })
+    data["subjects"][choice]["completed_hours"] += hours
+    data["history"].append({
+        "subject": data["subjects"][choice]["name"],
+        "hours": hours,
+        "date": str(datetime.today().date())
+    })
 
-#     save_data(data)
-#     print("✅ Study logged!")
-
-
-# # -------------------------
-# # ANALYTICS
-# # -------------------------
-
-# def show_analytics(data):
-#     print("\n📊 STUDY ANALYTICS\n")
-
-#     total_hours = sum(s["completed_hours"] for s in data["subjects"])
-#     print(f"Total Study Hours: {total_hours}")
-
-#     for subject in data["subjects"]:
-#         print(f"{subject['name']} → {subject['completed_hours']} hrs completed")
+    save_data(data)
+    print("✅ Study logged!")
 
 
-# # -------------------------
-# # MAIN MENU
-# # -------------------------
+# -------------------------
+# ANALYTICS
+# -------------------------
 
-# def main():
-#     data = load_data()
+def show_analytics(data):
+    print("\n📊 STUDY ANALYTICS\n")
 
-#     while True:
-#         print("\n===== AI SMART STUDY PLANNER =====")
-#         print("1. Add Subject")
-#         print("2. Generate Study Plan")
-#         print("3. Log Study Hours")
-#         print("4. View Analytics")
-#         print("5. Exit")
+    total_hours = sum(s["completed_hours"] for s in data["subjects"])
+    print(f"Total Study Hours: {total_hours}")
 
-#         choice = input("Select option: ")
-
-#         if choice == "1":
-#             add_subject(data)
-#         elif choice == "2":
-#             generate_plan(data)
-#         elif choice == "3":
-#             log_study(data)
-#         elif choice == "4":
-#             show_analytics(data)
-#         elif choice == "5":
-#             print("👋 Goodbye!")
-#             break
-#         else:
-#             print("Invalid choice!")
+    for subject in data["subjects"]:
+        print(f"{subject['name']} → {subject['completed_hours']} hrs completed")
 
 
-# if __name__ == "__main__":
-#     main()
+# -------------------------
+# MAIN MENU
+# -------------------------
+
+def main():
+    data = load_data()
+
+    while True:
+        print("\n===== AI SMART STUDY PLANNER =====")
+        print("1. Add Subject")
+        print("2. Generate Study Plan")
+        print("3. Log Study Hours")
+        print("4. View Analytics")
+        print("5. Exit")
+
+        choice = input("Select option: ")
+
+        if choice == "1":
+            add_subject(data)
+        elif choice == "2":
+            generate_plan(data)
+        elif choice == "3":
+            log_study(data)
+        elif choice == "4":
+            show_analytics(data)
+        elif choice == "5":
+            print("👋 Goodbye!")
+            break
+        else:
+            print("Invalid choice!")
+
+
+if __name__ == "__main__":
+    main()
